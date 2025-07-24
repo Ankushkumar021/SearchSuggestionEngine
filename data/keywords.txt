@@ -1,11 +1,11 @@
-japan:4
 keyboard:12
+japan:5
+mobile:25
+mouse:14
+mousepad:9
+monitor:8
 lamp:7
 lampcover:2
 laptop:15
 laptopsleeve:3
 laptopcase:5
-monitor:8
-mobile:25
-mouse:14
-mousepad:9

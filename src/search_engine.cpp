@@ -17,28 +17,19 @@ SearchEngine::~SearchEngine() {
 void SearchEngine::loadFromFile() {
     trie.clear();
     std::ifstream fin(filename);
-    if (!fin.is_open()) {
-        std::cerr << "❌ Failed to open file: " << filename << "\n";
-        return;
-    }
-
     std::string line;
     while (getline(fin, line)) {
-        std::cout << "Reading line: " << line << std::endl; // DEBUG PRINT
         std::istringstream iss(line);
         std::string word;
         int freq = 1;
         if (getline(iss, word, ':')) {
             std::string freqStr;
-            if (getline(iss, freqStr)) {
+            if (getline(iss, freqStr))
                 freq = std::stoi(freqStr);
-                std::cout << "Parsed: " << word << " -> " << freq << "\n"; // DEBUG PRINT
-                trie.insert(word, freq);
-            }
+            trie.insert(word, freq);
         }
     }
 }
-
 
 void SearchEngine::saveToFile() {
     std::ofstream fout(filename);
